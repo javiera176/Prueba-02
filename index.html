@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Prueba 2</title>
+
+	<script
+	src="http://code.jquery.com/jquery-3.2.1.min.js"
+	integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+	crossorigin="anonymous"></script>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+ 	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!--mi estilo--> 
+	<link rel="stylesheet" href="style.css">
+
+	<!--jquery-->
+ 
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+
+	<article class="col-md-6 colizquierda">
+	 
+		<form id = "myForm"> 
+			<textarea id = "myText"></textarea><br>
+			<input type="submit" name = "" value = "Nuevo tweet"> 
+		</form>
+	</article>
+
+	<aside class="col-md-6  colderecha">
+			<h1>listado tweets</h1>
+		 
+			<table id = "lista">
+					 
+					 
+		 	</table>
+	 	 	
+
+	</aside>
+
+
+
+  
+	<script>
+		
+ 
+			$(document).ready(function(){
+			$("#myForm").on('submit', function(event){
+				var text = $('#myText').val(); 
+				event.preventDefault();
+				$("#lista").prepend(
+
+					'<tr><td>'
+					+ text
+					+ '</td><td>'  
+					 +' <a href="#" title="Me Gusta" class="me-gusta"><span class="glyphicon glyphicon-heart like-it"> 0 </span></a> '
+					+ '</td>'
+					+ ' <td><button type="button" class="close eliminar" aria-label="Close" title="Eliminar Tweet"><span aria-hidden="true">&times;</span></button></td>'
+					+'</tr>' 
+
+
+				)
+
+
+				$('#myText').val('');
+				$('#myText').focus();	 
+
+			});
+
+		});
+
+
+	$('.colderecha').on('click', '.like-it', function(){
+		$(this).addClass('likeable');
+		$(this).css('color', 'red'); 
+	});
+
+ 	$('.colderecha').on('click', '.like-it', function(){
+		var count = parseInt($(this).text())+1;
+        $(this).html('<span>'+' '+count+'</span>');  
+
+	});	
+
+
+ 	$('#lista').on('click','.eliminar', function(event){
+    event.stopPropagation();
+    $(this).parent().parent().fadeOut(800);
+  	});
+
+
+
+
+/*recuerda poner la lista arriba */
+
+
+	</script>
+
+ 
+    
+   
+
+</body>
+</html>
