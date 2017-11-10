@@ -55,6 +55,7 @@
   background-color: white;
   height: 100px;
   padding-left: 30px;
+  padding-right: 10px;
   border-bottom: 1px lightgrey solid;
 }
 
@@ -63,4 +64,8 @@ textarea{
 	margin-left: 130px;
 	height: 80px;
 	margin-top: 30px;
+}
+img {
+	width: 10%;
+	height: 10%;
 }
