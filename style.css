@@ -1,10 +1,66 @@
  form, table{
 
  	margin-top: 100px;
+
  }
+
+#myForm{
+	position: relative;
+}
 
  img{
  	width: 65%;
  	height: 65%;
 
  }
+
+ body{
+ background-color: #E6ECF0;
+ font-family: arial;	
+ }
+
+ h2 {
+ 	text-align: center;
+ 	font-weight: bold;
+ 	 
+ }
+
+ input{
+ 	background-color: #00a2ec;
+ 	border-radius: 10%;
+ 	font-weight: bold;
+ 	border-radius: 30%;
+ 	color: white;
+ 	height: 50px;
+ }
+
+ .panel-tw{
+ 	 background-color: white;
+ 	 height: 170px;
+ 
+  
+ }
+
+ table {
+ 
+    width: 500px;
+   background-color: white;
+   border: 1px lightgrey solid;
+   margin-left: 50px;
+ 
+ }
+
+ td {
+  border: 1px lightgrey  ;
+  background-color: white;
+  height: 100px;
+  padding-left: 30px;
+  border-bottom: 1px lightgrey solid;
+}
+
+textarea{
+	width: 350px;
+	margin-left: 130px;
+	height: 80px;
+	margin-top: 30px;
+}
